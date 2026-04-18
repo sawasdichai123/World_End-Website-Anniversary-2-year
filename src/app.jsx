@@ -14,6 +14,24 @@ const ACCENT_MAP = {
   neon: "#9cff4a",
 };
 
+const IMAGE_PATHS = {
+  ashyra: "assets/talents/Ashyra.png",
+  mildr: "assets/talents/MildR.png",
+  tsururu: "assets/talents/Tsururu.png",
+  ami: "assets/talents/Ami.png",
+  debirun: "assets/talents/Debirun.png",
+  xonebu: "assets/talents/Xonebu.png",
+};
+
+const IMAGE_POSITIONS = {
+  ashyra: "50% 8%",
+  mildr: "50% 18%",
+  tsururu: "50% 6%",
+  ami: "50% 10%",
+  debirun: "50% 4%",
+  xonebu: "50% 12%",
+};
+
 function App() {
   const [state, setState] = useStateA(DEFAULTS);
   const cursorRef = useRefA(null);
@@ -25,6 +43,15 @@ function App() {
   useEffectA(() => {
     document.documentElement.style.setProperty("--blood", ACCENT_MAP[state.accent] || "#c8312b");
   }, [state.accent]);
+
+  // derive talents with image metadata before render
+  const talents = React.useMemo(() => {
+    return (window.TALENTS || []).map((talent) => ({
+      ...talent,
+      imagePath: IMAGE_PATHS[talent.id],
+      imagePosition: IMAGE_POSITIONS[talent.id] || "50% 50%",
+    }));
+  }, []);
 
   // cursor follow
   useEffectA(() => {
@@ -113,7 +140,7 @@ function App() {
       <main>
         <section id="hero"><Hero layout={state.heroLayout} /></section>
         <section id="talents">
-          <Stage talents={window.TALENTS} particlesOn={state.particles} styleMode={state.density} />
+          <Stage talents={talents} particlesOn={state.particles} styleMode={state.density} />
         </section>
         <section id="mv"><MV /></section>
       </main>

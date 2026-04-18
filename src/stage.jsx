@@ -76,12 +76,15 @@ function Stage({ talents, particlesOn, styleMode }) {
                   filter: isActive ? "none" : "saturate(.6) blur(.4px)",
                   "--talent": t.color,
                   "--talent-bg": t.bg,
+                  "--talent-image": t.imagePath ? `url(${t.imagePath})` : "none",
+                  "--talent-image-pos": t.imagePosition || "50% 50%",
                 }}
               >
                 <div className="portrait">
+                  {t.imagePath ? <img className="portrait-image" src={t.imagePath} alt={t.name} loading="lazy" style={{ objectPosition: t.imagePosition || "50% 50%" }} /> : null}
+                  <div className="portrait-overlay" />
                   <div className="portrait-tag">CH. {t.sub}</div>
                   <div className="portrait-num">{t.no}</div>
-                  <div className="portrait-icon">{t.instrumentIcon}</div>
                   <div className="portrait-instrument">{t.instrument}</div>
                   <div className="portrait-disaster">{t.disaster}</div>
                   <div className="portrait-name">{t.name.split(" ")[0]}</div>

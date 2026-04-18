@@ -509,7 +509,7 @@
       width: 340px;
       height: 480px;
       margin: -240px 0 0 -170px;
-      transform-style: preserve-3d;
+      backface-visibility: hidden;
       transition: transform 1s cubic-bezier(.65, .02, .2, 1), opacity .8s;
       cursor: pointer;
     }
@@ -520,7 +520,8 @@
       border: 1px solid var(--rule);
       background:
         linear-gradient(155deg, rgba(255, 255, 255, .04), rgba(0, 0, 0, .6)),
-        var(--talent-bg, #1a1516);
+        var(--talent-bg, #1a1516),
+        #0a0a0a;
       overflow: hidden;
       box-shadow:
         0 30px 80px rgba(0, 0, 0, .6),
@@ -535,6 +536,18 @@
       background:
         radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, .15), transparent 50%),
         repeating-linear-gradient(45deg, transparent 0 12px, rgba(255, 255, 255, .02) 12px 14px);
+    }
+
+    .portrait-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: var(--talent-image-pos, 50% 50%);
+      z-index: 1;
+      filter: saturate(1.05) contrast(1.02);
+      transform: scale(1.02);
     }
 
     .portrait-tag {

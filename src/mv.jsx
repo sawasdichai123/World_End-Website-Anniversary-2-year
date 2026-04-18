@@ -7,7 +7,7 @@ function MV() {
         <div className="mv-head">
           <div>
             <div className="kicker">/ 03 — ENCORE</div>
-            <h2>THE <span style={{ fontStyle: "italic", color: "var(--blood)" }}>OFFICIAL</span><br/>MUSIC VIDEO</h2>
+            <h2>THE <span style={{ fontStyle: "italic", color: "var(--blood)" }}>FEATURED</span><br/>MUSIC VIDEO</h2>
           </div>
           <div className="meta">
             <div>W.E. UNIT · ORIGINAL SONG</div>
