@@ -507,8 +507,8 @@
       top: 50%;
       left: 50%;
       width: 340px;
-      height: 480px;
-      margin: -240px 0 0 -170px;
+      height: 540px;
+      margin: -270px 0 0 -170px;
       backface-visibility: hidden;
       transition: transform 1s cubic-bezier(.65, .02, .2, 1), opacity .8s;
       cursor: pointer;
@@ -516,7 +516,10 @@
 
     .portrait {
       position: absolute;
-      inset: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 60px;
       border: 1px solid var(--rule);
       background:
         linear-gradient(155deg, rgba(255, 255, 255, .04), rgba(0, 0, 0, .6)),
@@ -566,71 +569,41 @@
       color: var(--ink);
     }
 
-    .portrait-num {
+    .portrait-label {
       position: absolute;
-      bottom: 14px;
-      right: 14px;
-      z-index: 3;
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 72px;
-      line-height: .8;
-      color: var(--ink);
-      opacity: .9;
-    }
-
-    .portrait-icon {
-      position: absolute;
-      left: 50%;
-      top: 46%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 140px;
-      line-height: .8;
-      color: var(--talent, #fff);
-      opacity: .9;
-      filter: drop-shadow(0 0 30px var(--talent, #fff));
-      text-align: center;
-    }
-
-    .portrait-instrument {
-      position: absolute;
+      bottom: 0;
       left: 0;
       right: 0;
-      bottom: 82px;
-      z-index: 3;
       text-align: center;
+      height: 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .portrait-label.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .portrait-label-name {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 28px;
+      letter-spacing: .06em;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .portrait-label-meta {
       font-family: "JetBrains Mono", monospace;
       font-size: 10px;
-      letter-spacing: .32em;
-      color: var(--talent, #fff);
+      letter-spacing: .3em;
+      color: var(--talent, var(--ink-dim));
       text-transform: uppercase;
-    }
-
-    .portrait-disaster {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 56px;
-      z-index: 3;
-      text-align: center;
-      font-family: "IBM Plex Sans Thai", sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--ink);
-    }
-
-    .portrait-name {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 20px;
-      z-index: 3;
-      text-align: center;
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 26px;
-      letter-spacing: .04em;
-      color: var(--ink);
+      margin-top: 4px;
     }
 
     /* stage details panel */
@@ -1120,6 +1093,112 @@
       line-height: 1.6
     }
 
+    /* special thanks */
+    .special-thanks {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 32px 80px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .st-head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .st-line {
+      width: 40px;
+      height: 1px;
+      background: var(--blood);
+      margin: 0 auto 20px;
+    }
+
+    .st-kicker {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: .35em;
+      color: var(--ink-dim);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .st-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(32px, 5vw, 56px);
+      letter-spacing: .02em;
+      line-height: .9;
+      margin: 0;
+    }
+
+    .st-sub {
+      font-family: "IBM Plex Sans Thai", sans-serif;
+      font-size: 14px;
+      color: var(--ink-dim);
+      margin-top: 16px;
+    }
+
+    .st-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .st-card {
+      border: 1px solid var(--rule);
+      padding: 28px 20px;
+      background: linear-gradient(165deg, rgba(255,255,255,.03), rgba(0,0,0,.4));
+      transition: border-color .3s, transform .3s;
+    }
+
+    .st-card:hover {
+      border-color: var(--blood);
+      transform: translateY(-4px);
+    }
+
+    .st-num {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 36px;
+      color: var(--blood);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .st-name {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 20px;
+      letter-spacing: .06em;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .st-role {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      letter-spacing: .25em;
+      color: var(--blood);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .st-desc {
+      font-family: "IBM Plex Sans Thai", sans-serif;
+      font-size: 12px;
+      color: var(--ink-dim);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .st-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .st-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* footer */
     .foot {
       padding: 80px 32px 40px;
@@ -1326,8 +1405,8 @@
 
       .slot {
         width: 240px;
-        height: 340px;
-        margin: -170px 0 0 -120px
+        height: 400px;
+        margin: -200px 0 0 -120px
       }
     }
   </style>

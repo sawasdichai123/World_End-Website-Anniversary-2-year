@@ -89,10 +89,10 @@ function Stage({ talents, particlesOn, styleMode }) {
                   {t.imagePath ? <img className="portrait-image" src={t.imagePath} alt={t.name} loading="lazy" style={{ objectPosition: t.imagePosition || "50% 50%" }} /> : null}
                   <div className="portrait-overlay" />
                   <div className="portrait-tag">CH. {t.sub}</div>
-                  <div className="portrait-num">{t.no}</div>
-                  <div className="portrait-instrument">{t.instrument}</div>
-                  <div className="portrait-disaster">{t.disaster}</div>
-                  <div className="portrait-name">{t.name.split(" ")[0]}</div>
+                </div>
+                <div className={`portrait-label${isActive ? " active" : ""}`}>
+                  <div className="portrait-label-name">{t.displayName || t.name.split(" ").slice(-1)[0]}</div>
+                  <div className="portrait-label-meta">{t.instrument} · {t.no}</div>
                 </div>
               </div>
             );
@@ -125,12 +125,19 @@ function Stage({ talents, particlesOn, styleMode }) {
             <span className="tag">{cur.instrument}</span>
           </div>
           <h3>
-            {cur.name.split(" ").map((w, i, arr) => (
-              <span key={i}>
-                {i === arr.length - 1 ? <span className="em">{w}</span> : w}
-                {i < arr.length - 1 ? " " : ""}
-              </span>
-            ))}
+            {cur.id === "xonebu" ? (
+              <>
+                <span style={{ color: "var(--talent)" }}>XONEBU</span>{" "}
+                <span style={{ color: "#fff", fontStyle: "italic" }}>X'THULHU</span>
+              </>
+            ) : (
+              cur.name.split(" ").map((w, i, arr) => (
+                <span key={i}>
+                  {i === arr.length - 1 ? <span className="em">{w}</span> : w}
+                  {i < arr.length - 1 ? " " : ""}
+                </span>
+              ))
+            )}
           </h3>
           <div className="romaji">{cur.thName} · {cur.disaster}</div>
 

@@ -49,6 +49,31 @@ function MV() {
         </div>
       </div>
 
+      <section className="special-thanks">
+        <div className="st-head">
+          <div className="st-line" />
+          <div className="st-kicker">/ 04 — SPECIAL THANKS</div>
+          <h2 className="st-title">MADE WITH <span style={{ color: "var(--blood)", fontStyle: "italic" }}>LOVE</span><br/>BY THE FAN CLUB</h2>
+          <div className="st-sub">โปรเจกต์นี้จัดทำโดยแฟนคลับผู้รัก World End ทั้ง 5 คน</div>
+        </div>
+        <div className="st-grid">
+          {[
+            { name: "FAN CLUB 1", role: "PROJECT LEAD", desc: "ควบคุมดูแลโปรเจกต์ทั้งหมด" },
+            { name: "FAN CLUB 2", role: "WEB DEVELOPER", desc: "พัฒนาเว็บไซต์และระบบ" },
+            { name: "FAN CLUB 3", role: "GRAPHIC DESIGNER", desc: "ออกแบบกราฟิกและ Visual" },
+            { name: "FAN CLUB 4", role: "CONTENT WRITER", desc: "เขียนเนื้อหาและ Lore" },
+            { name: "FAN CLUB 5", role: "VIDEO EDITOR", desc: "ตัดต่อวิดีโอและ MV" },
+          ].map((m, i) => (
+            <div className="st-card" key={i} style={{ "--delay": `${i * 0.1}s` }}>
+              <div className="st-num">0{i + 1}</div>
+              <div className="st-name">{m.name}</div>
+              <div className="st-role">{m.role}</div>
+              <div className="st-desc">{m.desc}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <footer className="foot">
         <div>
           <div className="big">WORLD · END // 02Y</div>
