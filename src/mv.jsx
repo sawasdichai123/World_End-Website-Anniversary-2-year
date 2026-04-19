@@ -31,22 +31,12 @@ function MV() {
             </div>
           ) : (
             <div className="mv-center" style={{ width: "100%", height: "100%", position: "absolute", inset: 0, display: "grid", placeItems: "center" }}>
-              <div style={{
-                width: "82%", aspectRatio: "16/9",
-                border: "1px dashed rgba(255,255,255,.2)",
-                display: "grid", placeItems: "center",
-                fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: ".3em",
-                color: "var(--ink-dim)", textTransform: "uppercase",
-                background: "rgba(0,0,0,.4)",
-              }}>
-                <div style={{ textAlign: "center", lineHeight: 1.8 }}>
-                  &lt; EMBED · YOUTUBE IFRAME · HERE &gt;
-                  <div style={{ marginTop: 8, opacity: .6 }}>Drop the MV embed URL in src/mv.jsx</div>
-                  <button onClick={() => setPlaying(false)} style={{ marginTop: 20, border: "1px solid rgba(255,255,255,.3)", padding: "8px 16px", color: "var(--ink-dim)" }}>
-                    ← BACK TO POSTER
-                  </button>
-                </div>
-              </div>
+              <video
+                src="assets/Mvtest.mp4"
+                controls
+                autoPlay
+                style={{ width: "82%", aspectRatio: "16/9", background: "#000" }}
+              />
             </div>
           )}
         </div>

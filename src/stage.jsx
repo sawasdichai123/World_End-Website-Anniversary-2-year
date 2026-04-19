@@ -3,6 +3,7 @@ const { useState: useStateS, useEffect: useEffectS, useMemo: useMemoS, useRef: u
 function Stage({ talents, particlesOn, styleMode }) {
   const [active, setActive] = useStateS(0);
   const [hov, setHov] = useStateS(null);
+  const [rotY, setRotY] = useStateS(0);
   const count = talents.length;
   const cur = talents[active];
 
@@ -16,10 +17,14 @@ function Stage({ talents, particlesOn, styleMode }) {
     if (i === active) return;
     setTrans(true);
     setTimeout(() => setTrans(false), 700);
+
+    let diff = i - active;
+    if (diff > count / 2) diff -= count;
+    if (diff < -count / 2) diff += count;
+
+    setRotY((prev) => prev - diff * step);
     setActive(i);
   };
-
-  const rotY = -active * step;
 
   // apply talent color var to root of section
   const cssVars = {
@@ -161,16 +166,31 @@ function Stage({ talents, particlesOn, styleMode }) {
         </div>
 
         <aside className="vitals">
-          <h4>// VITALS — {cur.name}</h4>
-          {cur.vitals.map((v) => (
-            <div key={v.k}>
-              <div className="row">
-                <span className="k">{v.k}</span>
-                <span className="v em">{v.v}</span>
-              </div>
-              <div className="meter"><span style={{ "--p": v.p }} /></div>
+          <h4>// PROFILE — {cur.name}</h4>
+          <div>
+            <div className="row">
+              <span className="k">BIRTHDAY</span>
+              <span className="v em">{cur.birthday}</span>
             </div>
-          ))}
+          </div>
+          <div>
+            <div className="row">
+              <span className="k">DEBUT</span>
+              <span className="v em">{cur.debutDate}</span>
+            </div>
+          </div>
+          <div>
+            <div className="row">
+              <span className="k">INSTRUMENT</span>
+              <span className="v em">{cur.instrument}</span>
+            </div>
+          </div>
+          <div>
+            <div className="row">
+              <span className="k">DISASTER</span>
+              <span className="v em">{cur.disasterEn}</span>
+            </div>
+          </div>
           <div style={{ marginTop: 24, paddingTop: 20, borderTop: "1px solid var(--rule)" }}>
             <div className="row" style={{ borderBottom: 0, padding: 0 }}>
               <span className="k">STAGE POSITION</span>

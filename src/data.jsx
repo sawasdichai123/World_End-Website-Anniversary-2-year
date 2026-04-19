@@ -17,12 +17,8 @@ const TALENTS = [
     bg: "linear-gradient(155deg,#3a1208,#1a0904)",
     particle: "ember",
     bio: "แอชีร่า สาวน้อยผู้แสนจะเรียบร้อย พูดน้อย น่ารัก ศูนย์รวมของความสดใสและมากล้นไปด้วยเอเนอจี้แบบ 300% เธอไม่เพียงแค่น่ารักเท่านั้น แต่ยังเต็มเปี่ยมไปด้วยความร่าเริง มุ้งมิ้ง วุ้งวิ้ง คาวาอี้ เธอจะมีแต่รอยยิ้มให้คุณ ไม่ว่าจะยามเช้า สาย บ่าย เย็น หรือก่อนนอน\u2002—\u2002เธอเป็นคนที่มีเสน่ห์อย่างน่าเหลือเชื่อ สามารถทำให้คนรอบข้างรู้สึกดีและมีความสุขเพียงแค่ได้อยู่ใกล้เธอ",
-    vitals: [
-      { k: "ELEMENT", v: "LAVA", p: 0.96 },
-      { k: "ENERGY", v: "300%", p: 1 },
-      { k: "CHARM", v: "MAXIMUM", p: 0.98 },
-      { k: "ROLE", v: "ONĒ-SAN", p: 0.8 },
-    ],
+    birthday: "June 12",
+    debutDate: "2024.05.23 · 20:00",
     socials: {
       twitter: "twitter.com/AshyraWorldEnd",
       facebook: "facebook.com/AshyraWorldEnd",
@@ -45,12 +41,8 @@ const TALENTS = [
     bg: "linear-gradient(155deg,#1d1038,#0a0418)",
     particle: "pixel",
     bio: "มายด์อาร์ Mutant มนุษย์กลายพันธุ์ที่จะมารักษาหัวใจคุณแบบ super exclusive แต่เมื่อหลงเข้ามาแล้วจงระวัง เพราะมายมีตาวิเศษเห็นนะ หลังจากออกจากหลอดทดลอง บอกตรงๆว่ามีหลายอารมณ์เกิดขึ้นมากมาย ถ้าเค้ามีร่างกายที่ผิดมนุษย์แบบนี้แล้ว\u2002...\u2002เธอจะยังรักเค้าอยู่มั้ยนะ\u2002...\u2002?",
-    vitals: [
-      { k: "SPECIES", v: "MUTANT", p: 0.88 },
-      { k: "SIGHT", v: "ALL-SEEING", p: 1 },
-      { k: "STATUS", v: "LAB-LEAKED", p: 0.75 },
-      { k: "INTIMACY", v: "SUPER EXCL.", p: 0.92 },
-    ],
+    birthday: "December 12",
+    debutDate: "2024.05.22 · 20:00",
     socials: {
       twitter: "twitter.com/MildRWorldEnd",
       facebook: "facebook.com/MildRWorldEnd",
@@ -73,12 +65,8 @@ const TALENTS = [
     bg: "linear-gradient(155deg,#0b2238,#04101c)",
     particle: "cloud",
     bio: "ท้องฟ้าแปรปรวน ระดับน้ำทะเลสูงขึ้น คลื่นความร้อนกระจายตัว ความแห้งแล้งของพื้นดิน และทั้งหมดนี้ ก่อให้เกิด ตัวแทนแห่งภาวะโลกร้อน ก้อนเมฆตัวน้อย ที่ลอยสูงที่สุ๊ดดดดดดดดดดด ด ด ด ด ด",
-    vitals: [
-      { k: "ALTITUDE", v: "ʜɪɢʜᴇsᴛ", p: 1 },
-      { k: "FORM", v: "SMALL CLOUD", p: 0.7 },
-      { k: "TEMPERATURE", v: "RISING", p: 0.88 },
-      { k: "SEA LEVEL", v: "+Δ", p: 0.82 },
-    ],
+    birthday: "September 16",
+    debutDate: "2024.05.22 · 18:00",
     socials: {
       twitter: "twitter.com/TsururuWorldEnd",
       facebook: "facebook.com/TsururuWorldEnd",
@@ -101,12 +89,8 @@ const TALENTS = [
     bg: "linear-gradient(155deg,#07302b,#02110f)",
     particle: "circuit",
     bio: "ดวงดาวที่เบต้า เอเอ็มไอจากมา คือสถานที่ที่เทคโนโลยีก้าวหน้าจนถึงจุดสูงสุด เหล่าหุ่นยนต์ผู้มีความนึกคิดได้ก่อการปฏิวัติขึ้น เป็นผลให้มีมนุษย์หลงเหลืออยู่น้อยมาก ในโลกอันแสนโหดร้ายใบนั้น ยังมีเอมิผู้ซึ่งรักพวกเขาสุดหัวใจ\u2002—\u2002แค่เพียงเหตุผลสั้นๆ นั้นทำให้เอมิโดนกีดกั้นและเกลียดชังจากทั้งสองฝ่าย ในวันหนึ่งเธอได้บังเอิญช่วยมนุษย์สาวคนนึงไว้ หลังได้เปิดใจคุยกันก็พบความจริงว่า ‘มนุษย์เป็นผู้สร้างหุ่นยนต์ขึ้นมา‘ หัวใจพองโตเมื่อรับรู้ถึงความปรารถนาใหม่ สุดท้ายแล้วเอมิจะสามารถปกป้องและพบเจอเขาคนนั้นไหมนะ?",
-    vitals: [
-      { k: "MODEL", v: "BETA-AMI", p: 0.85 },
-      { k: "ALIGNMENT", v: "PRO-HUMAN", p: 1 },
-      { k: "BPM", v: "128", p: 0.7 },
-      { k: "HOME", v: "SYSTEM β", p: 0.6 },
-    ],
+    birthday: "July 16",
+    debutDate: "2024.05.21 · 18:00",
     socials: {
       twitter: "twitter.com/AMIWorldEnd",
       facebook: "facebook.com/AMIWorldEnd",
@@ -129,12 +113,8 @@ const TALENTS = [
     bg: "linear-gradient(155deg,#3a2a05,#140d02)",
     particle: "meteor",
     bio: "เดบีรุน ภัยพิบัติอุกกาบาต ผู้บัญชาการสูงสุดแห่งกองทัพลับเมเทโอรอยด์ ออกเดินทางท่องจักรวาลจัดการกับผู้กระทำความผิดที่เป็นภัยคุกคามต่อทั้งเอกภพ มีพลังดาวตกที่กวาดล้างโลกเพื่อการถือกำเนิดใหม่ และชี้ชะตาทุกสรรพสิ่ง ตอนนี้ได้มาเยือนที่โลกมนุษย์ประเทศไทย แอบมาสำรวจโลกใบนี้อย่างแนบเนียนในร่างเด็กสาวชาวโลก ด้วยการตัดสินใจอันเด็ดเดี่ยวของเดบีรุนจึงได้พาทุกคนย้อนกลับมายังอดีต เป็นวีทูปเบอร์ เพื่อกระจายข่าวสารและประกาศให้ชาวโลกได้ตระหนักถึงภัยพิบัติที่กำลังคลืบคลานเข้ามาก่อนที่จะสายเกินไป เรื่องที่เล่ามาทั้งหมด เป็นจริงแค่ไหนไม่มีใครรู้",
-    vitals: [
-      { k: "RANK", v: "COMMANDER", p: 1 },
-      { k: "ARMY", v: "METEOROID", p: 0.9 },
-      { k: "POWER", v: "STAR-FALL", p: 0.95 },
-      { k: "COVER", v: "EARTH GIRL", p: 0.6 },
-    ],
+    birthday: "November 20",
+    debutDate: "2024.05.23 · 18:00",
     socials: {
       twitter: "twitter.com/DebirunWorldEnd",
       facebook: "facebook.com/DebirunWorldEnd",
@@ -157,12 +137,8 @@ const TALENTS = [
     bg: "linear-gradient(155deg,#0f2a08,#041004)",
     particle: "alien",
     bio: "เอเลี่ยนจากซากดวงดาว X01 อันห่างไกล เดินทางมาที่ดาวโลกเพื่อช่วยเหลือและกอบกู้!!! ....ล้อเล่น มาหาอะไรทำเฉยๆ ค่ะ อวกาศมันน่าเบื่อ",
-    vitals: [
-      { k: "ORIGIN", v: "RUIN X-01", p: 0.6 },
-      { k: "MISSION", v: "NONE", p: 0.2 },
-      { k: "MOOD", v: "BORED", p: 0.5 },
-      { k: "THREAT", v: "UNCLEAR", p: 0.77 },
-    ],
+    birthday: "August 28",
+    debutDate: "2024.05.21 · 20:00",
     socials: {
       twitter: "twitter.com/XonebuWorldEnd",
       facebook: "facebook.com/XonebuWorldEnd",

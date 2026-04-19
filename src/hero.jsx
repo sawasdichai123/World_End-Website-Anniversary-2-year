@@ -41,9 +41,16 @@ function Hero({ layout }) {
 
         {layout === "a" && (
           <div className="hero-title">
-            <div><span>WORLD</span></div>
-            <div><span className="stroke">END</span> <span className="amp">&</span></div>
-            <div><span>ENCORE</span></div>
+            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: ".12em" }}>
+              <span>WORLD</span>
+              <span className="amp" style={{ fontSize: ".32em", letterSpacing: ".2em", verticalAlign: "middle" }}>·</span>
+              <span className="stroke">END</span>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 16, marginTop: 12 }}>
+              <span style={{ flex: 1, maxWidth: 120, height: 1, background: "var(--rule)" }} />
+              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: ".4em", color: "var(--blood)" }}>2ND ANNIVERSARY</span>
+              <span style={{ flex: 1, maxWidth: 120, height: 1, background: "var(--rule)" }} />
+            </div>
           </div>
         )}
         {layout === "b" && (
