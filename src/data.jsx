@@ -149,3 +149,39 @@ const TALENTS = [
 ];
 
 window.TALENTS = TALENTS;
+
+// Fanart data from Google Sheets
+const FANART_SHEET_URL = "REPLACE_WITH_YOUR_APPS_SCRIPT_URL";
+
+function normalizeFanartEntry(row) {
+  const w = Number(row.width) || 0;
+  const h = Number(row.height) || 0;
+  let orientation = "square";
+  if (w && h) {
+    if (h / w > 1.15) orientation = "portrait";
+    else if (w / h > 1.15) orientation = "landscape";
+  }
+  return {
+    artist: row.artist || "",
+    contact: row.contact || "",
+    submitter: row.submitter || "",
+    message: row.message || "",
+    imageUrl: row.imageUrl || "",
+    width: w,
+    height: h,
+    orientation,
+    sortOrder: Number(row.sortOrder) || 0,
+  };
+}
+
+async function fetchFanart() {
+  const res = await fetch(FANART_SHEET_URL);
+  if (!res.ok) throw new Error("Failed to fetch fanart data");
+  const json = await res.json();
+  const rows = Array.isArray(json) ? json : json.data || [];
+  return rows
+    .map(normalizeFanartEntry)
+    .sort((a, b) => a.sortOrder - b.sortOrder);
+}
+
+window.fetchFanart = fetchFanart;

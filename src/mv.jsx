@@ -1,3 +1,111 @@
+function FanartGallery() {
+  const [entries, setEntries] = React.useState([]);
+  const [status, setStatus] = React.useState("loading");
+  const [selected, setSelected] = React.useState(null);
+
+  React.useEffect(() => {
+    window.fetchFanart()
+      .then((data) => {
+        setEntries(data);
+        setStatus(data.length ? "ok" : "empty");
+      })
+      .catch(() => setStatus("error"));
+  }, []);
+
+  return (
+    <section className="fanart" data-screen-label="04 Fanart">
+      <div className="fa-inner">
+        <div className="fa-head">
+          <div className="fa-line" />
+          <div className="fa-kicker">/ 04 — GALLERY</div>
+          <h2 className="fa-title">FANART <span style={{ color: "var(--blood)", fontStyle: "italic" }}>WE</span><br/>2 ANNIVERSARY</h2>
+          <div className="fa-sub">ผลงานจากใจแฟนคลับ ส่งรักถึงสาว ๆ World End</div>
+        </div>
+
+        {status === "loading" && (
+          <div className="fa-status">
+            <div className="fa-spinner" />
+            <div>LOADING FANART...</div>
+          </div>
+        )}
+        {status === "error" && (
+          <div className="fa-status">
+            <div>ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง</div>
+          </div>
+        )}
+        {status === "empty" && (
+          <div className="fa-status">
+            <div>ยังไม่มีผลงานในขณะนี้</div>
+          </div>
+        )}
+
+        {status === "ok" && (
+          <div className="fa-grid">
+            {entries.map((entry, i) => (
+              <div
+                className={`fa-card fa-${entry.orientation}`}
+                key={i}
+                style={{ "--delay": `${i * 0.06}s` }}
+                onClick={() => setSelected(i)}
+              >
+                <div className="fa-img-wrap">
+                  <img
+                    src={entry.imageUrl}
+                    alt={`Fanart by ${entry.artist}`}
+                    loading="lazy"
+                    width={entry.width || undefined}
+                    height={entry.height || undefined}
+                  />
+                </div>
+                <div className="fa-meta">
+                  <div className="fa-artist">{entry.artist}</div>
+                  {entry.submitter && <div className="fa-submitter">ส่งโดย {entry.submitter}</div>}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {selected !== null && entries[selected] && (
+          <div className="fa-overlay" onClick={() => setSelected(null)}>
+            <div className="fa-modal" onClick={(e) => e.stopPropagation()}>
+              <button className="fa-close" onClick={() => setSelected(null)}>✕</button>
+              <div className="fa-modal-img">
+                <img src={entries[selected].imageUrl} alt={`Fanart by ${entries[selected].artist}`} />
+              </div>
+              <div className="fa-modal-info">
+                <div className="fa-modal-artist">{entries[selected].artist}</div>
+                {entries[selected].contact && (
+                  <div className="fa-modal-contact">{entries[selected].contact}</div>
+                )}
+                {entries[selected].submitter && (
+                  <div className="fa-modal-submitter">ส่งโดย {entries[selected].submitter}</div>
+                )}
+                {entries[selected].message && (
+                  <div className="fa-modal-message">"{entries[selected].message}"</div>
+                )}
+              </div>
+              <div className="fa-modal-nav">
+                <button
+                  disabled={selected === 0}
+                  onClick={() => setSelected(selected - 1)}
+                >← PREV</button>
+                <span className="fa-modal-count">{selected + 1} / {entries.length}</span>
+                <button
+                  disabled={selected === entries.length - 1}
+                  onClick={() => setSelected(selected + 1)}
+                >NEXT →</button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+window.FanartGallery = FanartGallery;
+
 function MV() {
   const [playing, setPlaying] = React.useState(false);
 
@@ -48,6 +156,8 @@ function MV() {
           <div><div className="c-k">ANNIVERSARY</div><div className="c-v">02 / 02 · 2024 — 2026</div></div>
         </div>
       </div>
+
+      <FanartGallery />
 
       <section className="special-thanks">
         <div className="st-head">

@@ -108,6 +108,7 @@ function App() {
             if (label.includes("Hero")) setActiveNav("hero");
             if (label.includes("Talents")) setActiveNav("talents");
             if (label.includes("MV")) setActiveNav("mv");
+            if (label.includes("Fanart")) setActiveNav("fanart");
           }
         });
       },
@@ -135,6 +136,7 @@ function App() {
         <a href="#hero" className={activeNav === "hero" ? "active" : ""}><span>01 · HERO</span><span className="bar" /></a>
         <a href="#talents" className={activeNav === "talents" ? "active" : ""}><span>02 · TALENTS</span><span className="bar" /></a>
         <a href="#mv" className={activeNav === "mv" ? "active" : ""}><span>03 · MV</span><span className="bar" /></a>
+        <a href="#fanart" className={activeNav === "fanart" ? "active" : ""}><span>04 · FANART</span><span className="bar" /></a>
       </nav>
 
       <main>
